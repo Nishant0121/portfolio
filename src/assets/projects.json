@@ -1,0 +1,34 @@
+{
+  "projects": [
+    {
+      "name": "Atlas OS",
+      "technologies": ["React", "Tailwind CSS", "MERN"],
+      "link": "https://github.com/yourusername/atlas-os",
+      "description": "A custom operating system built using React for the frontend, utilizing Tailwind CSS for design and a MERN stack for backend infrastructure. Aimed at providing a smooth user interface and robust performance."
+    },
+    {
+      "name": "profile",
+      "technologies": ["Next.js", "Chakra UI", "TypeScript"],
+      "link": "https://yourportfolio.com",
+      "description": "A personal portfolio website built using Next.js and styled with Chakra UI, demonstrating TypeScript proficiency and showcasing various development projects."
+    },
+    {
+      "name": "Chat Application",
+      "technologies": ["Socket.io", "Node.js", "Express"],
+      "link": "https://github.com/yourusername/chat-app",
+      "description": "A real-time chat application using Socket.io for instant communication, with a Node.js and Express backend, and MongoDB for data persistence."
+    },
+    {
+      "name": "E-commerce Platform",
+      "technologies": ["Vue.js", "Vuetify", "Firebase"],
+      "link": "https://ecommerce.com",
+      "description": "An e-commerce platform built with Vue.js and Vuetify for a sleek user interface, with Firebase handling backend services like authentication and database storage."
+    },
+    {
+      "name": "Social Media Dashboard",
+      "technologies": ["Angular", "NgRx", "Sass"],
+      "link": "https://github.com/yourusername/social-media-dashboard",
+      "description": "A social media analytics dashboard built using Angular, with state management handled by NgRx and styled using Sass for a clean and responsive design."
+    }
+  ]
+}
