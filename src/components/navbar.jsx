@@ -30,14 +30,15 @@ export default function Navbar() {
         >
           Projects
         </Link>
-        <div
+        <Link
+          to={"/resume"}
           onClick={() => handleLinkChange("/resume")}
           className={`${
             activeLink === "/resume" ? "bg-blue-500" : "bg-gray-900"
           } px-3 py-1 rounded cursor-pointer`}
         >
           Resume
-        </div>
+        </Link>
         <Link
           to={"/journey"}
           onClick={() => handleLinkChange("/journey")}
