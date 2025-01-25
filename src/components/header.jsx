@@ -18,7 +18,12 @@ export default function Header() {
         Nishnat
       </h1>
 
-      <Link className=" px-3 py-1 bg-blue-400 rounded-lg">Contact Me</Link>
+      <a
+        href="mailto:nishantpatil0121@gmail.com"
+        className=" px-3 py-1 bg-blue-400 rounded-lg"
+      >
+        Contact Me
+      </a>
     </nav>
   );
 }

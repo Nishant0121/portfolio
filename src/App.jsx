@@ -2,7 +2,6 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/layout";
 import Home from "./pages/home";
-import Projects from "./pages/projects";
 import { TimelineDemo } from "./pages/journey";
 import Resume from "./pages/resume";
 
@@ -13,9 +12,9 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
         </Route>
-        <Route path="/projects" element={<Layout />}>
+        {/* <Route path="/projects" element={<Layout />}>
           <Route index element={<Projects />} />
-        </Route>
+        </Route> */}
         <Route path="/journey" element={<Layout />}>
           <Route index element={<TimelineDemo />} />
         </Route>

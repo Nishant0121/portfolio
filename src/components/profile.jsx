@@ -35,10 +35,14 @@ const ProfileCard = () => {
         </span>
         <div className="mb-3 grid grid-cols-3 gap-4 mt-3">
           <div>
-            <FaInstagram className="h-7 w-7 text-pink-700" />
+            <Link to={"https://www.instagram.com/nishant_0121_/"}>
+              <FaInstagram className="h-7 w-7 text-pink-700" />
+            </Link>
           </div>
           <div>
-            <FaGithub className="h-7 w-7 text-white" />
+            <Link to={"https://github.com/Nishant0121"}>
+              <FaGithub className="h-7 w-7 text-white" />
+            </Link>
           </div>
           <Link to={"https://www.linkedin.com/in/nishant-patil-a88003253/"}>
             <FaLinkedinIn className="h-7 w-7 text-blue-700" />
