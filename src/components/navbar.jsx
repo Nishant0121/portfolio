@@ -21,7 +21,7 @@ export default function Navbar() {
         >
           Home
         </Link>
-        {/* <Link
+        <Link
           to={"/projects"}
           onClick={() => handleLinkChange("/project")}
           className={`${
@@ -29,7 +29,7 @@ export default function Navbar() {
           } px-3 py-1 rounded cursor-pointer`}
         >
           Projects
-        </Link> */}
+        </Link>
         <Link
           to={"/resume"}
           onClick={() => handleLinkChange("/resume")}

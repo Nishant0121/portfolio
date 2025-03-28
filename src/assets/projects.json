@@ -1,34 +1,47 @@
 {
   "projects": [
     {
-      "name": "Atlas OS",
-      "technologies": ["React", "Tailwind CSS", "MERN"],
-      "link": "https://github.com/yourusername/atlas-os",
-      "description": "A custom operating system built using React for the frontend, utilizing Tailwind CSS for design and a MERN stack for backend infrastructure. Aimed at providing a smooth user interface and robust performance."
+      "name": "AlumniHub",
+      "technologies": [
+        "React.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Google Gemini"
+      ],
+      "link": "https://github.com/Nishant0121/AlumniHub",
+      "description": "A centralized alumni platform with career guidance, multilingual support, course recommendations, and interactive student-alumni features.",
+      "imageUrl": "https://lcdn-in.icons8.com/c/aTHg__Xh3k2cCdJwEb4FuA/fda437e5f6971f643a3776e7a04a3ff763faeaf8.png"
     },
     {
-      "name": "profile",
-      "technologies": ["Next.js", "Chakra UI", "TypeScript"],
-      "link": "https://yourportfolio.com",
-      "description": "A personal portfolio website built using Next.js and styled with Chakra UI, demonstrating TypeScript proficiency and showcasing various development projects."
+      "name": "FinWise",
+      "technologies": [
+        "React.js",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "Google Gemini"
+      ],
+      "link": "https://github.com/Nishant0121/FinWise",
+      "url": "https://fin-wise-bice.vercel.app/",
+      "description": "A financial management platform offering budgeting tools, savings tracking, debt management, personalized recommendations, and community-driven financial education.",
+      "imageUrl": "https://lottie.host/02ab9254-8b8e-4790-be8e-509f6f34f860/KM1tYQYA37.lottie"
     },
     {
-      "name": "Chat Application",
-      "technologies": ["Socket.io", "Node.js", "Express"],
-      "link": "https://github.com/yourusername/chat-app",
-      "description": "A real-time chat application using Socket.io for instant communication, with a Node.js and Express backend, and MongoDB for data persistence."
+      "name": "Chit-Chat",
+      "technologies": ["React.js", "Node.js", "MongoDB", "WebSockets"],
+      "link": "https://github.com/Nishant0121/Chit-Chat",
+      "url": "https://n-chat-sable.vercel.app/",
+      "description": "A real-time chat application featuring user following, messaging, and plans for video calling functionality.",
+      "imageUrl": "https://lottie.host/f9fc7787-5c24-45ed-8251-107269474564/4TixDNFAx1.lottie"
     },
     {
-      "name": "E-commerce Platform",
-      "technologies": ["Vue.js", "Vuetify", "Firebase"],
-      "link": "https://ecommerce.com",
-      "description": "An e-commerce platform built with Vue.js and Vuetify for a sleek user interface, with Firebase handling backend services like authentication and database storage."
-    },
-    {
-      "name": "Social Media Dashboard",
-      "technologies": ["Angular", "NgRx", "Sass"],
-      "link": "https://github.com/yourusername/social-media-dashboard",
-      "description": "A social media analytics dashboard built using Angular, with state management handled by NgRx and styled using Sass for a clean and responsive design."
+      "name": "N.Shop",
+      "technologies": ["React.js", "Node.js", "Express", "MongoDB"],
+      "link": "https://github.com/Nishant0121/N.Shop",
+      "url": "https://n-shop-lyart.vercel.app/",
+      "description": "An e-commerce website with third-party payment gateway integration, product filtering, UPI-based checkout, and a seamless online shopping experience.",
+      "imageUrl": "https://lcdn-in.icons8.com/c/aTHg__Xh3k2cCdJwEb4FuA/b18ed01824d489ad558f6ba1e685149245f47e6b.png"
     }
   ]
 }

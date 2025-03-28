@@ -4,6 +4,7 @@ import Layout from "./components/layout";
 import Home from "./pages/home";
 import { TimelineDemo } from "./pages/journey";
 import Resume from "./pages/resume";
+import Projects from "./pages/projects";
 
 function App() {
   return (
@@ -12,9 +13,9 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
         </Route>
-        {/* <Route path="/projects" element={<Layout />}>
+        <Route path="/projects" element={<Layout />}>
           <Route index element={<Projects />} />
-        </Route> */}
+        </Route>
         <Route path="/journey" element={<Layout />}>
           <Route index element={<TimelineDemo />} />
         </Route>
