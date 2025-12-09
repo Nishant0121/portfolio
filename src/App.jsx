@@ -1,34 +1,11 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import Layout from "./components/layout";
-import Home from "./pages/home";
-import { TimelineDemo } from "./pages/journey";
-import Resume from "./pages/resume";
-import Projects from "./pages/projects";
+import './App.css'
 
 function App() {
   return (
-    <div className=" scroll-container bg-web">
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-        </Route>
-        <Route path="/projects" element={<Layout />}>
-          <Route index element={<Projects />} />
-        </Route>
-        <Route path="/journey" element={<Layout />}>
-          <Route index element={<TimelineDemo />} />
-        </Route>
-        <Route path="/resume" element={<Layout />}>
-          <Route index element={<Resume />} />
-        </Route>
-
-        <Route path="/test" element={<Layout />}>
-          <Route index element={<TimelineDemo />} />
-        </Route>
-      </Routes>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <h1 className="text-5xl font-extrabold text-blue-600 tracking-wide animate-fade-in-down">Nishnat</h1>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
