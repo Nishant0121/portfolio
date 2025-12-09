@@ -1,10 +1,15 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
+import Layout from './components/layout'
 
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <h1 className="text-5xl font-extrabold text-blue-600 tracking-wide animate-fade-in-down">Nishnat</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<div>hello</div>} />
+        <Route path="about" element={<div>goat</div>} />
+      </Route>
+    </Routes>
   )
 }
 
