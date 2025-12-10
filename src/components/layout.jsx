@@ -6,12 +6,12 @@ export default function Layout() {
     return (
         <div className='bg-[#1e1e1e] min-h-screen text-white flex flex-col'>
             {/* Navbar for large screens - appears at the top */}
-            <div className="hidden md:block">
+            <div className="hidden md:block absolute top-0 left-0 right-0 z-50">
                 <Navbar />
             </div>
 
             {/* Main content area, padding-bottom to account for fixed bottom navbar on small screens */}
-            <main className="flex-grow md:pb-0 pb-[5rem]">
+            <main className="grow md:pb-0 pb-20 relative">
                 <Outlet />
             </main>
 

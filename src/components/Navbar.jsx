@@ -18,10 +18,9 @@ export default function Navbar() {
                         key={item.name}
                         to={item.path}
                         className={({ isActive }) =>
-                            `flex items-center gap-2 text-lg font-medium transition-all px-4 py-2 md:px-6 md:py-2 duration-200 rounded-full ${
-                                isActive 
-                                    ? 'bg-[#1e1e1e] text-white' 
-                                    : 'text-[#050408] hover:text-blue-600'
+                            `flex items-center gap-2 text-lg font-medium transition-all px-4 py-2 md:px-6 md:py-2 duration-200 rounded-full ${isActive
+                                ? 'bg-[#1e1e1e] text-white'
+                                : 'text-[#050408] hover:text-white'
                             }`
                         }
                     >
