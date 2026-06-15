@@ -1,19 +1,25 @@
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import Layout from './components/layout'
-import Landing from './pages/Landing'
+
+import { Layout } from './components/Layout';
+import Home from './pages/Home';
+import About from './pages/About';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
-    <Routes>
-
-      <Route path="/" element={<Layout />}>
-        <Route index element={<div>hello</div>} />
-        <Route path="about" element={<div>goat</div>} />
-        <Route path='test' element={<Landing />} />
-      </Route>
-    </Routes>
-  )
+    
+    
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+    
+  
+  );
 }
 
-export default App
+export default App;
