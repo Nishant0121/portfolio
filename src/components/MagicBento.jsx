@@ -524,11 +524,11 @@ const MagicBento = ({
                 enableMagnetism={enableMagnetism}
               >
                 <div className="magic-bento-card__header">
-                  <div className="magic-bento-card__label">{card.label}</div>
+                  <div className="magic-bento-card__label" style={{ color: card.textColor }}>{card.label}</div>
                 </div>
                 <div className="magic-bento-card__content">
-                  <h2 className="magic-bento-card__title">{card.title}</h2>
-                  <p className="magic-bento-card__description">{card.description}</p>
+                  <h2 className="magic-bento-card__title" style={{ color: card.textColor }}>{card.title}</h2>
+                  <p className="magic-bento-card__description" style={{ color: card.textColor }}>{card.description}</p>
                 </div>
               </ParticleCard>
             );

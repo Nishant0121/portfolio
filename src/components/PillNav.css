@@ -186,7 +186,7 @@
 .hamburger-line {
   width: 16px;
   height: 2px;
-  background: var(--hover-text, #fff);
+  background: var(--hover-bg, #000);
   border-radius: 1px;
   transition: all 0.01s ease;
   transform-origin: center;

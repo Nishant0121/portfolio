@@ -228,7 +228,7 @@ const PillNav = ({
   return (
     <div className="pill-nav-container flex items-center justify-between" style={cssVars}>
       <div className={`items-center gap-2 bg-[${baseColor}] p-3 rounded-full ${className} w-fit flex md:hidden`} ref={logoRef}>
-        <span className="text-white focus-within:text-black">Nishant</span>
+        <span className="text-black focus-within:text-black">Nishant</span>
       </div>
       <nav className={`pill-nav ${className}`} aria-label="Primary" style={cssVars}>
         {logo && (

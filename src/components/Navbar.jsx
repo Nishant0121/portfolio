@@ -29,10 +29,10 @@ export default function Navbar() {
       <PillNav
         items={items}
         activeHref={location.pathname}
-        baseColor="#e77015"
-        hoverColor="#1e1e1e"
-        pillTextColor="#050408"
-        hoveredPillTextColor="#ffffff"
+        baseColor="#c5ff41"
+        hoverColor="#1a1817"
+        pillTextColor="#151312"
+        hoveredPillTextColor="#c5ff41"
         initialLoadAnimation={true}
       />
     </nav>
