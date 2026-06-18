@@ -47,6 +47,7 @@ Mobile: React Native
 Machine Learning: Scikit-learn, Pandas, NumPy, NLP, Logistic Regression, Streamlit
 CSS & Styling: Tailwind CSS, Bootstrap
 Tools: Git, GitHub, Postman
+
 Coursework: Data Structures & Algorithms, Object-Oriented Programming
 Awards & Achievements
 • 1st Place — Need for Code 3.0 Hackathon: Built a full-stack platform to digitize India’s ration card system,
