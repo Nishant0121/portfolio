@@ -1,33 +1,31 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import Layout from "./components/layout";
-import Home from "./pages/home";
-import { TimelineDemo } from "./pages/journey";
-import Resume from "./pages/resume";
-import Projects from "./pages/projects";
+
+import React, { useState } from 'react';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Layout } from './components/Layout';
+import LoadingScreen from './components/LoadingScreen';
+
 
 function App() {
-  return (
-    <div className=" scroll-container bg-web">
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-        </Route>
-        <Route path="/projects" element={<Layout />}>
-          <Route index element={<Projects />} />
-        </Route>
-        <Route path="/journey" element={<Layout />}>
-          <Route index element={<TimelineDemo />} />
-        </Route>
-        <Route path="/resume" element={<Layout />}>
-          <Route index element={<Resume />} />
-        </Route>
+  const [isLoading, setIsLoading] = useState(true);
 
-        <Route path="/test" element={<Layout />}>
-          <Route index element={<TimelineDemo />} />
-        </Route>
-      </Routes>
-    </div>
+  return (
+    <>
+      {isLoading && <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="projects" element={<Projects />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

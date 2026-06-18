@@ -1,0 +1,57 @@
+
+My Resume:-
+"""Nishant Patil
+
+ +91 9511692910 # nishantpatil10121@gmail.com  nishantpatil.vercel.app § github.com/Nishant0121
+Education
+Thadomal Shahani Engineering College Mumbai, India
+B.E. in Information Technology Expected Graduation: 2027
+Experience
+Pilji Healthtech Pvt Ltd Aug 2025 – Feb 2026
+App Developer Intern Remote
+• Built a production-grade full-stack mobile app using React Native, Node.js, Express, and Postgress, delivering
+end-to-end features from onboarding UI to backend data layer.
+• Designed RESTful APIs for all core app features and implemented JWT-based secure authentication to
+protect sensitive health data.
+Digital Guruji Apr 2025 – Jun 2025
+Full Stack Web Developer Intern Remote
+• Built a MERN stack platform unifying multiple Generative AI models (image, video, audio generation) into a
+single cohesive product used by the company’s client base.
+• Developed a fully responsive UI with React.js and Tailwind CSS; engineered secure, scalable backend APIs using
+Node.js, Express, and MongoDB.
+Projects
+YouTube Clickbait Classifier | Python, Scikit-learn, NLP, TF-IDF, RoBERTa | § GitHub
+• Developed a multimodal ML pipeline combining RoBERTa-based text embeddings and CNN-extracted
+thumbnail features to classify YouTube videos as clickbait, achieving 97.34% accuracy.
+• Engineered features including sentiment, lexical signals, and title-thumbnail similarity, applied PCA for
+dimensionality reduction, and evaluated models using a stacked ensemble approach.
+IPL Win Predictor | Python, Scikit-learn, Logistic Regression, Streamlit | § GitHub
+• Built a real-time IPL match win probability predictor using live features (score, wickets, overs, run rate), achieving
+87% prediction accuracy.
+• Deployed as an interactive Streamlit web app, letting users input live match state and receive instant win
+probability estimates for both teams.
+AutoCommit — VS Code Extension | TypeScript, VS Code API, Git | § GitHub
+• Published a VS Code extension with 86+ active installs that auto-generates commit messages by reading staged
+git diff output via LLM.
+• Shipped ”Commit Tone” modes (Professional, Pirate, Star Wars) and full Conventional Commits standard
+support for structured commit history.
+Link Up — Multiplayer Gaming Platform | React.js, Node.js, Socket.io, MongoDB | § GitHub
+• Developed a real-time multiplayer hub where friends can jump into shared game rooms, powered by WebSocket
+(Socket.io) for live bi-directional state sync.
+• Architected a scalable room management system handling multiple concurrent game sessions with low-latency
+updates and persistent session state via MongoDB.
+Technical Skills
+Languages: JavaScript, Python, C/C++, Java
+Web Development: React.js, Node.js, Express.js, Next.js, MongoDB, REST API, Firebase
+Mobile: React Native
+Machine Learning: Scikit-learn, Pandas, NumPy, NLP, Logistic Regression, Streamlit
+CSS & Styling: Tailwind CSS, Bootstrap
+Tools: Git, GitHub, Postman
+
+Coursework: Data Structures & Algorithms, Object-Oriented Programming
+Awards & Achievements
+• 1st Place — Need for Code 3.0 Hackathon: Built a full-stack platform to digitize India’s ration card system,
+replacing paper-based processes with digital verification and distribution tracking.
+• 1st Place — Wabecade Hackathon: Built an ed-tech platform to streamline the student learning journey,
+integrating curated resources and in-platform career opportunities for students.
+"""
