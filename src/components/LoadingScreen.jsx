@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import DecryptedText from './ui/DecryptedText';
+import Squares from './ui/Squares';
 import './LoadingScreen.css';
 
 const LoadingScreen = ({ onLoadingComplete }) => {
@@ -44,6 +45,15 @@ const LoadingScreen = ({ onLoadingComplete }) => {
 
   return (
     <div className={`loading-screen-container ${isExiting ? 'exit-curtain' : ''}`}>
+      <div className="loading-background">
+        <Squares 
+          speed={0.5} 
+          squareSize={40} 
+          direction='diagonal' 
+          borderColor='#333' 
+          hoverFillColor='#222'
+        />
+      </div>
       <div className="loading-content">
         <DecryptedText
           text="NISHANT / PORTFOLIO"
