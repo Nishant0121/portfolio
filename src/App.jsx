@@ -1,14 +1,14 @@
 
-import { Layout } from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Layout } from './components/Layout';
 
 
 function App() {
   return (
-    
-    
+
+
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -17,8 +17,8 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-    
-  
+
+
   );
 }
 
