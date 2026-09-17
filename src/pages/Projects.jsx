@@ -4,40 +4,7 @@ import TiltedCard from '../components/ui/TiltedCard';
 import BlurText from '../components/ui/BlurText';
 import { FolderGit2, ExternalLink } from 'lucide-react';
 
-const projects = [
-  {
-    title: "AutoCommit",
-    subtitle: "VS Code Extension",
-    tech: "TypeScript, VS Code API, Git",
-    description: "Published a VS Code extension with 86+ active installs that auto-generates commit messages via LLM.",
-    link: "https://github.com/Nishant0121",
-    image: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    title: "YouTube Classifier",
-    subtitle: "Machine Learning",
-    tech: "Python, NLP, RoBERTa",
-    description: "Multimodal ML pipeline combining text and thumbnail features, achieving 97.34% accuracy.",
-    link: "https://github.com/Nishant0121",
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    title: "IPL Win Predictor",
-    subtitle: "Data Science",
-    tech: "Python, Scikit-learn, Streamlit",
-    description: "Real-time IPL match win probability predictor using live features, achieving 87% accuracy.",
-    link: "https://github.com/Nishant0121",
-    image: "https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    title: "Link Up",
-    subtitle: "Gaming Platform",
-    tech: "React, Node.js, Socket.io",
-    description: "Real-time multiplayer hub where friends jump into shared game rooms with live state sync.",
-    link: "https://github.com/Nishant0121",
-    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000&auto=format&fit=crop"
-  }
-];
+import { projects } from '../data/portfolioData';
 
 export default function Projects() {
   return (
@@ -68,33 +35,39 @@ export default function Projects() {
               <TiltedCard
                 imageSrc={project.image}
                 altText={project.title}
-                captionText={project.title}
-                containerHeight="400px"
-                imageHeight="400px"
+                containerHeight="440px"
+                imageHeight="440px"
                 rotateAmplitude={10}
                 scaleOnHover={1.02}
                 overlayContent={
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex flex-col justify-end p-8">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#151312] via-black/60 to-black/30 group-hover:bg-black/30 transition-colors flex flex-col justify-end p-6 md:p-8">
                     <div className="space-y-2 translate-z-20">
-                      <p className="text-[#c5ff41] font-bold text-sm tracking-widest uppercase">{project.subtitle}</p>
-                      <h3 className="text-3xl font-black text-white">{project.title}</h3>
-                      <p className="text-[#998f8f] text-sm max-w-sm">{project.description}</p>
-                      <div className="flex gap-4 pt-4">
-                        <a 
-                          href={project.link} 
-                          target="_blank" 
+                      <p className="text-[#c5ff41] font-bold text-xs tracking-widest uppercase">{project.subtitle}</p>
+                      <h3 className="text-2xl md:text-3xl font-black text-white leading-tight">{project.title}</h3>
+                      <p className="text-[#998f8f] text-xs md:text-sm leading-relaxed line-clamp-3">{project.description}</p>
+                      <div className="flex flex-wrap gap-1.5 pt-2">
+                        {project.tech.map((t, tIdx) => (
+                          <span key={tIdx} className="px-2.5 py-0.5 text-[9px] uppercase font-bold tracking-wider rounded-full bg-black/60 border border-white/10 text-white/70">
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex gap-3 pt-3">
+                        <a
+                          href={project.link}
+                          target="_blank"
                           rel="noreferrer"
                           className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-[#c5ff41] hover:text-black rounded-xl transition-all font-bold text-xs"
                         >
-                          <FolderGit2 size={16} /> GITHUB
+                          <FolderGit2 size={15} /> GITHUB
                         </a>
-                        <a 
-                          href={project.link} 
-                          target="_blank" 
+                        <a
+                          href={project.link}
+                          target="_blank"
                           rel="noreferrer"
                           className="flex items-center gap-2 px-4 py-2 border border-white/20 hover:border-[#c5ff41] rounded-xl transition-all font-bold text-xs"
                         >
-                          <ExternalLink size={16} /> LIVE
+                          <ExternalLink size={15} /> DEMO / CODE
                         </a>
                       </div>
                     </div>
