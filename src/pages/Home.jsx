@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import SplashCursor from '@/components/ui/SplashCursor';
 import ShinyText from '@/components/ui/ShinyText';
 import MagicBento from '@/components/MagicBento';
@@ -16,91 +17,35 @@ import {
   Cpu,
   Layers,
   Smartphone,
-  Phone
+  Phone,
+  Palette,
+  Wrench,
+  BookOpen,
+  Database
 } from 'lucide-react';
+import {
+  personalInfo,
+  education,
+  experiences,
+  projects,
+  skillCategories,
+  awards,
+  resumeBentoData
+} from '@/data/portfolioData';
 
-const resumeData = [
-  {
-    color: '#c5ff41',
-    title: 'Nishant Patil',
-    description: 'B.E. in Information Technology @ Thadomal Shahani Engineering College (2027). Full Stack Developer & App Developer.',
-    label: 'Identity',
-    textColor: '#151312'
-  },
-  {
-    color: '#1a1817',
-    title: 'Pilji Healthtech',
-    description: 'App Developer Intern. Built a production-grade React Native health app with Node.js, Express, and PostgreSQL.',
-    label: 'Experience',
-    textColor: '#ffffff'
-  },
-  {
-    color: '#f46c38',
-    title: 'AutoCommit — VS Code Extension',
-    description: '86+ active installs. Auto-generates commit messages using LLMs. Supported in Professional, Pirate, and Star Wars tones.',
-    label: 'Project',
-    textColor: '#ffffff'
-  },
-  {
-    color: '#1a1817',
-    title: 'YouTube Clickbait Classifier',
-    description: 'Multimodal ML pipeline using RoBERTa & CNN features. Classified videos with 97.34% accuracy.',
-    label: 'Project',
-    textColor: '#ffffff'
-  },
-  {
-    color: '#c5ff41',
-    title: 'Digital Guruji',
-    description: 'Full Stack Web Intern. Built a MERN platform unifying multiple Generative AI models (image, video, audio).',
-    label: 'Experience',
-    textColor: '#151312'
-  },
-  {
-    color: '#1a1817',
-    title: 'Technical Skills',
-    description: 'JavaScript, Python, C/C++, Java. React.js, Node.js, Express.js, Next.js, MongoDB, React Native, Scikit-learn.',
-    label: 'Skills',
-    textColor: '#ffffff'
+const getSkillIcon = (iconName) => {
+  switch (iconName) {
+    case 'Terminal': return <Terminal size={20} />;
+    case 'Layers': return <Layers size={20} />;
+    case 'Smartphone': return <Smartphone size={20} />;
+    case 'Cpu': return <Cpu size={20} />;
+    case 'Palette': return <Palette size={20} />;
+    case 'Wrench': return <Wrench size={20} />;
+    case 'BookOpen': return <BookOpen size={20} />;
+    case 'Database': return <Database size={20} />;
+    default: return <Code size={20} />;
   }
-];
-
-const projects = [
-  {
-    title: "YouTube Clickbait Classifier",
-    tech: "Python, Scikit-learn, NLP, RoBERTa",
-    description: "Developed a multimodal ML pipeline combining text embeddings and thumbnail features, achieving 97.34% accuracy.",
-    link: "https://github.com/Nishant0121",
-    accent: "#c5ff41"
-  },
-  {
-    title: "IPL Win Predictor",
-    tech: "Python, Scikit-learn, Logistic Regression, Streamlit",
-    description: "Built a real-time IPL match win probability predictor using live features, achieving 87% prediction accuracy.",
-    link: "https://github.com/Nishant0121",
-    accent: "#f46c38"
-  },
-  {
-    title: "AutoCommit",
-    tech: "TypeScript, VS Code API, Git",
-    description: "Published a VS Code extension with 86+ active installs that auto-generates commit messages via LLM.",
-    link: "https://github.com/Nishant0121",
-    accent: "#c5ff41"
-  },
-  {
-    title: "Link Up",
-    tech: "React.js, Node.js, Socket.io, MongoDB",
-    description: "Real-time multiplayer hub where friends can jump into shared game rooms with live bi-directional state sync.",
-    link: "https://github.com/Nishant0121",
-    accent: "#f46c38"
-  }
-];
-
-const skills = [
-  { category: "Languages", items: ["JavaScript", "Python", "C/C++", "Java"], icon: <Terminal size={20} /> },
-  { category: "Web Dev", items: ["React.js", "Node.js", "Express.js", "Next.js", "MongoDB", "REST API", "Firebase"], icon: <Layers size={20} /> },
-  { category: "Mobile", items: ["React Native"], icon: <Smartphone size={20} /> },
-  { category: "Machine Learning", items: ["Scikit-learn", "Pandas", "NumPy", "NLP", "Logistic Regression", "Streamlit"], icon: <Cpu size={20} /> },
-];
+};
 
 const SectionHeader = ({ icon: Icon, title, subtitle }) => (
   <div className="flex flex-col gap-2 mb-8">
@@ -170,38 +115,40 @@ export default function Home() {
 
                 <div className="space-y-6 text-center lg:text-left">
                   <div className="space-y-3">
-                    <h1 className="text-4xl font-bold tracking-tight">Nishant Patil</h1>
+                    <h1 className="text-4xl font-bold tracking-tight">{personalInfo.name}</h1>
                     <p className="text-[#998f8f] leading-relaxed max-w-[320px] mx-auto lg:mx-0">
-                      B.E. IT Student & Full Stack Developer.
+                      {personalInfo.role}
                     </p>
                   </div>
 
                   <div className="space-y-3">
-                    <div className="flex items-center justify-center lg:justify-start gap-3 text-[#998f8f]">
+                    <a href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`} className="flex items-center justify-center lg:justify-start gap-3 text-[#998f8f] hover:text-[#c5ff41] transition-colors">
                       <Phone size={16} className="text-[#c5ff41]" />
-                      <span className="text-sm font-medium">+91 9511692910</span>
-                    </div>
-                    <div className="flex items-center justify-center lg:justify-start gap-3 text-[#998f8f]">
+                      <span className="text-sm font-medium">{personalInfo.phone}</span>
+                    </a>
+                    <a href={`mailto:${personalInfo.email}`} className="flex items-center justify-center lg:justify-start gap-3 text-[#998f8f] hover:text-[#c5ff41] transition-colors">
                       <Mail size={16} className="text-[#c5ff41]" />
-                      <span className="text-sm font-medium text-xs md:text-sm">nishantpatil10121@gmail.com</span>
-                    </div>
+                      <span className="text-sm font-medium text-xs md:text-sm">{personalInfo.email}</span>
+                    </a>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-6 mt-12 lg:mt-0 px-4 lg:px-0">
-                {/* <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-                  <a href="https://github.com/Nishant0121" target="_blank" rel="noreferrer" className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-[#c5ff41] hover:text-black transition-all">
-                    <FolderGit2 size={20} />
+              <div className="space-y-4 mt-12 lg:mt-0 px-4 lg:px-0">
+                <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+                  <a href={personalInfo.github} target="_blank" rel="noreferrer" title="GitHub" className="p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:bg-[#c5ff41] hover:text-black transition-all">
+                    <FolderGit2 size={18} />
                   </a>
-                  <a href="https://nishantpatil.vercel.app" target="_blank" rel="noreferrer" className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-[#c5ff41] hover:text-black transition-all">
-                    <ExternalLink size={20} />
+                  <a href={personalInfo.website} target="_blank" rel="noreferrer" title="Live Site" className="p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:bg-[#c5ff41] hover:text-black transition-all">
+                    <ExternalLink size={18} />
                   </a>
-                </div> */}
+                </div>
 
-                <button className="w-full my-5 py-5 rounded-2xl bg-[#c5ff41] text-black font-bold text-lg hover:bg-[#b0f030] transition-colors shadow-lg shadow-[#c5ff41]/10">
-                  Let's Work Together
-                </button>
+                <Link to="/contact" className="block w-full">
+                  <button className="w-full py-4 rounded-2xl bg-[#c5ff41] text-black font-bold text-base hover:bg-[#b0f030] transition-colors shadow-lg shadow-[#c5ff41]/10">
+                    Let's Work Together
+                  </button>
+                </Link>
               </div>
             </aside>
 
@@ -223,7 +170,7 @@ export default function Home() {
                     DIGITAL.
                   </h2>
                   <p className="text-xl md:text-2xl text-[#998f8f] max-w-2xl leading-relaxed">
-                    I specialize in creating production-grade applications and intelligent machine learning pipelines.
+                    {personalInfo.subTagline}
                   </p>
                 </div>
               </FullPageSection>
@@ -242,13 +189,16 @@ export default function Home() {
                           <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center" style={{ color: project.accent }}>
                             <FolderGit2 size={20} />
                           </div>
-                          <h4 className="text-2xl font-bold leading-tight">{project.title}</h4>
-                          <p className="text-[#998f8f] text-sm leading-relaxed line-clamp-2">{project.description}</p>
+                          <div>
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#998f8f]">{project.subtitle}</span>
+                            <h4 className="text-2xl font-bold leading-tight mt-1">{project.title}</h4>
+                          </div>
+                          <p className="text-[#998f8f] text-sm leading-relaxed line-clamp-3">{project.description}</p>
                         </div>
                         <div className="flex flex-wrap gap-2 mt-6">
-                          {project.tech.split(',').slice(0, 3).map((t, idx) => (
+                          {project.tech.map((t, idx) => (
                             <span key={idx} className="px-3 py-1 text-[9px] uppercase font-bold tracking-widest rounded-full bg-white/5 text-white/40">
-                              {t.trim()}
+                              {t}
                             </span>
                           ))}
                         </div>
@@ -262,31 +212,30 @@ export default function Home() {
               <FullPageSection>
                 <SectionHeader title="Path" subtitle="Experience" icon={Briefcase} />
                 <div className="space-y-4">
-                  {[
-                    {
-                      company: "Pilji Healthtech Pvt Ltd",
-                      role: "App Developer Intern",
-                      period: "Aug 2025 – Feb 2026",
-                      desc: "Built a production-grade full-stack mobile app using React Native, Node.js, Express, and PostgreSQL."
-                    },
-                    {
-                      company: "Digital Guruji",
-                      role: "Full Stack Web Developer Intern",
-                      period: "Apr 2025 – Jun 2025",
-                      desc: "Built a MERN platform unifying multiple Generative AI models into a single cohesive product."
-                    }
-                  ].map((exp, i) => (
+                  {experiences.map((exp, i) => (
                     <div key={i} className="p-8 rounded-[28px] bg-white/5 border border-white/5 hover:bg-white/[0.08] transition-all group">
-                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+                      <div className="flex flex-col md:flex-row md:items-start justify-between gap-2 mb-4">
                         <div>
                           <h4 className="text-xl font-bold group-hover:text-[#c5ff41] transition-colors">{exp.role}</h4>
                           <p className="text-[#c5ff41] font-medium">{exp.company}</p>
                         </div>
-                        <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest px-4 py-2 rounded-full border border-white/5 bg-white/5">
-                          {exp.period}
-                        </span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10px] font-bold text-[#c5ff41] uppercase tracking-widest px-3 py-1 rounded-full border border-[#c5ff41]/20 bg-[#c5ff41]/5">
+                            {exp.location}
+                          </span>
+                          <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest px-3 py-1 rounded-full border border-white/5 bg-white/5">
+                            {exp.period}
+                          </span>
+                        </div>
                       </div>
-                      <p className="text-[#998f8f] leading-relaxed">{exp.desc}</p>
+                      <ul className="space-y-2 mt-4 text-[#998f8f] leading-relaxed text-sm">
+                        {exp.bullets.map((bullet, bIdx) => (
+                          <li key={bIdx} className="flex items-start gap-2.5">
+                            <span className="text-[#c5ff41] mt-1 text-xs shrink-0">◆</span>
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   ))}
                 </div>
@@ -296,11 +245,11 @@ export default function Home() {
               <FullPageSection>
                 <SectionHeader title="Expertise" subtitle="Skills" icon={Layers} />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {skills.map((skill, i) => (
+                  {skillCategories.map((skill, i) => (
                     <div key={i} className="p-8 rounded-[28px] bg-white/5 border border-white/5">
                       <div className="flex items-center gap-4 mb-6">
                         <div className="p-2.5 rounded-xl bg-[#c5ff41]/10 text-[#c5ff41]">
-                          {skill.icon}
+                          {getSkillIcon(skill.iconName)}
                         </div>
                         <h4 className="text-lg font-bold">{skill.category}</h4>
                       </div>
@@ -321,25 +270,33 @@ export default function Home() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
                   <div className="flex flex-col">
                     <SectionHeader title="Learning" subtitle="Education" icon={GraduationCap} />
-                    <div className="p-8 rounded-[28px] bg-white/5 border border-white/5 flex-1">
-                      <h4 className="text-xl font-bold mb-1">B.E. IT</h4>
-                      <p className="text-[#c5ff41] font-medium mb-4">Thadomal Shahani Engineering</p>
-                      <p className="text-[#998f8f] text-sm leading-relaxed">
-                        Expected 2027 <br />
-                        Mumbai, India
-                      </p>
+                    <div className="p-8 rounded-[28px] bg-white/5 border border-white/5 flex-1 flex flex-col justify-center">
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#c5ff41] mb-2">Undergraduate</span>
+                      <h4 className="text-2xl font-bold mb-2">{education.degree}</h4>
+                      <p className="text-white/90 font-medium mb-4">{education.institution}</p>
+                      <div className="flex flex-wrap items-center gap-2.5 text-sm text-[#998f8f]">
+                        <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-white/60">
+                          {education.location}
+                        </span>
+                        <span className="px-3 py-1 rounded-full bg-[#c5ff41]/10 border border-[#c5ff41]/20 text-xs font-bold text-[#c5ff41]">
+                          CGPA: {education.cgpa}
+                        </span>
+                        <span className="px-3 py-1 rounded-full bg-[#c5ff41]/10 border border-[#c5ff41]/20 text-xs font-medium text-[#c5ff41]">
+                          {education.status}
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <div className="flex flex-col">
                     <SectionHeader title="Wins" subtitle="Awards" icon={Award} />
-                    <div className="p-8 rounded-[28px] bg-[#c5ff41] text-black flex-1 flex flex-col justify-center space-y-6">
-                      {[
-                        "1st Place — Need for Code 3.0",
-                        "1st Place — Wabecade Hackathon"
-                      ].map((award, i) => (
-                        <div key={i} className="flex items-center gap-4">
-                          <div className="w-1.5 h-1.5 rounded-full bg-black" />
-                          <p className="font-bold text-lg leading-tight">{award}</p>
+                    <div className="p-8 rounded-[28px] bg-[#c5ff41] text-black flex-1 flex flex-col justify-center space-y-4">
+                      {awards.map((award, i) => (
+                        <div key={i} className="space-y-1">
+                          <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 rounded-full bg-black shrink-0" />
+                            <p className="font-black text-sm md:text-base leading-tight">{award.title}</p>
+                          </div>
+                          <p className="text-black/85 text-xs md:text-sm pl-4 leading-relaxed font-medium">{award.description}</p>
                         </div>
                       ))}
                     </div>
@@ -347,38 +304,21 @@ export default function Home() {
                 </div>
               </FullPageSection>
 
-              {/* BENTO HIGHLIGHTS */}
-              {/* <FullPageSection>
-                <SectionHeader title="Vibe" subtitle="Highlights" icon={Layers} />
-                <div className="h-[500px]">
-                  <MagicBento
-                    data={resumeData}
-                    textAutoHide={true}
-                    enableStars
-                    enableSpotlight
-                    enableBorderGlow={true}
-                    enableTilt={true}
-                    enableMagnetism={true}
-                    clickEffect
-                    spotlightRadius={400}
-                    particleCount={20}
-                    glowColor="197, 255, 65"
-                    disableAnimations={false}
-                  />
-                </div>
-              </FullPageSection> */}
-
               {/* FOOTER - As a small snap section */}
               <section className="py-20 snap-start border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
                 <p className="text-[#998f8f] text-sm">
-                  &copy; 2026 Nishant Patil.
+                  &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
                 </p>
                 <div className="flex gap-8">
-                  {['Github', 'LinkedIn', 'Twitter'].map(link => (
-                    <a key={link} href="#" className="text-xs font-bold uppercase tracking-widest text-[#998f8f] hover:text-[#c5ff41] transition-colors">
-                      {link}
-                    </a>
-                  ))}
+                  <a href={personalInfo.github} target="_blank" rel="noreferrer" className="text-xs font-bold uppercase tracking-widest text-[#998f8f] hover:text-[#c5ff41] transition-colors">
+                    GitHub
+                  </a>
+                  <a href={`mailto:${personalInfo.email}`} className="text-xs font-bold uppercase tracking-widest text-[#998f8f] hover:text-[#c5ff41] transition-colors">
+                    Email
+                  </a>
+                  <a href={personalInfo.website} target="_blank" rel="noreferrer" className="text-xs font-bold uppercase tracking-widest text-[#998f8f] hover:text-[#c5ff41] transition-colors">
+                    Portfolio
+                  </a>
                 </div>
               </section>
 

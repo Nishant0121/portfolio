@@ -1,0 +1,189 @@
+%-------------------------
+% Resume in LaTeX
+% Author: Nishant Patil
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+\usepackage[a4paper,margin=0.6in]{geometry}
+
+\usepackage{titlesec}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Nishant Patil} \\ \vspace{4pt}
+    \small
+    \raisebox{-0.1\height}\faPhone\ \href{tel:+919511692910}{+91 9511692910} ~
+    \href{mailto:nishantpatil10121@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ nishantpatil10121@gmail.com} ~
+    \href{https://nishantpatil.vercel.app}{\raisebox{-0.2\height}\faGlobe\ nishantpatil.vercel.app} ~
+    \href{https://github.com/Nishant0121}{\raisebox{-0.2\height}\faGithub\ github.com/Nishant0121}
+    \vspace{-8pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Thadomal Shahani Engineering College}{Mumbai, India}
+      {B.E. in Information Technology (CGPA 8.43)}{Expected Graduation: 2027}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Deloitte}{Jun 2026 -- Aug 2026}
+      {Software Engineer Intern}{Mumbai, India}
+      \resumeItemListStart
+        \resumeItem{Contributed to the \textbf{AIC (Analytics Insights Center)} website in the External Audit department, building modules including the \textbf{Feedback Portal} and \textbf{Projection Tracker} using \textbf{React} and \textbf{GenW.AI}.}
+        \resumeItem{Contributed to \textbf{audit pipeline automation} using \textbf{Python} and \textbf{LLM-based} tools to streamline data processing workflows.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Pilji Healthtech Pvt Ltd}{Aug 2025 -- Feb 2026}
+      {App Developer Intern}{Remote}
+      \resumeItemListStart
+        \resumeItem{Built a production-grade full-stack mobile app using \textbf{React Native, Node.js, Express, and Postgress}, delivering end-to-end features from onboarding UI to backend data layer.}
+        \resumeItem{Designed \textbf{RESTful APIs} for all core app features and implemented \textbf{JWT-based secure authentication} to protect sensitive health data.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Digital Guruji}{Apr 2025 -- Jun 2025}
+      {Full Stack Web Developer Intern}{Remote}
+      \resumeItemListStart
+        \resumeItem{Built a \textbf{MERN stack} platform unifying multiple Generative AI models (image, video, audio generation) into a single cohesive product used by the company's client base.}
+        \resumeItem{Developed a fully responsive UI with \textbf{React.js and Tailwind CSS}; engineered secure, scalable backend APIs using \textbf{Node.js, Express, and MongoDB}.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+        {\textbf{YouTube Clickbait Classifier} $|$ \emph{Python, Scikit-learn, NLP, TF-IDF, RoBERTa} $|$ \href{https://github.com/Nishant0121/Clickbait-Classification}{\faGithub\ GitHub}}{}
+        \resumeItemListStart
+          \resumeItem{Developed a multimodal ML pipeline combining \textbf{RoBERTa-based text embeddings} and \textbf{CNN-extracted thumbnail features} to classify YouTube videos as clickbait, achieving \textbf{97.34\% accuracy}.}
+          \resumeItem{Engineered features including \textbf{sentiment, lexical signals, and title-thumbnail similarity}, applied \textbf{PCA} for dimensionality reduction, and evaluated models using a \textbf{stacked ensemble approach}.}
+        \resumeItemListEnd
+
+      \resumeProjectHeading
+        {\textbf{AutoCommit} — VS Code Extension $|$ \emph{TypeScript, VS Code API, Git} $|$ \href{https://github.com/Nishant0121/AutoCommit}{\faGithub\ GitHub}}{}
+        \resumeItemListStart
+          \resumeItem{Published a VS Code extension with \textbf{100+ active installs} that auto-generates commit messages by reading staged \texttt{git diff} output via LLM.}
+          \resumeItem{Shipped "Commit Tone" modes (Professional, Pirate, Star Wars) and full \textbf{Conventional Commits} standard support for structured commit history.}
+        \resumeItemListEnd
+
+      \resumeProjectHeading
+        {\textbf{Link Up} — Multiplayer Gaming Platform $|$ \emph{React.js, Node.js, Socket.io, MongoDB} $|$ \href{https://github.com/Nishant0121/Linkup}{\faGithub\ GitHub}}{}
+        \resumeItemListStart
+          \resumeItem{Developed a real-time multiplayer hub where friends can jump into shared game rooms, powered by \textbf{WebSocket (Socket.io)} for live bi-directional state sync.}
+          \resumeItem{Architected a scalable room management system handling multiple concurrent game sessions with low-latency updates and persistent session state via MongoDB.}
+        \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: JavaScript, Python, C/C++} \\
+     \textbf{Web Development}{: React.js, Node.js, Express.js, REST API, Tailwind CSS, Bootstrap} \\
+     \textbf{Mobile}{: React Native} \\
+     \textbf{Machine Learning}{: Scikit-learn, Pandas, NumPy, NLP, Logistic Regression, Streamlit} \\
+     \textbf{Database}{: Firebase, MongoDB, PostgreSQL } \\
+     \textbf{Tools}{: Git, GitHub, Postman} \\
+    }}
+ \end{itemize}
+
+%-----------AWARDS & ACHIEVEMENTS-----------
+\section{Awards \& Achievements}
+\resumeItemListStart
+
+\resumeItem{\textbf{Top 60 Pre-Finalist — Deloitte Hacksplosion 2026}: Advanced with my team through Deloitte India's national hackathon (21,900+ registrations), building on the \textbf{GenW.AI} platform.}
+
+\resumeItem{\textbf{1st Place — Wabecade Hackathon}: Built an ed-tech platform integrating learning resources and career opportunities for students.}
+
+\resumeItem{\textbf{1st Place — Need for Code 3.0 Hackathon}: Built a full-stack digital ration card system to replace paper-based verification.}
+
+\resumeItemListEnd
+
+\end{document}

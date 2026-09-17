@@ -4,31 +4,33 @@ import SpotlightCard from '../components/ui/SpotlightCard';
 import DecryptedText from '../components/ui/DecryptedText';
 import { Mail, Phone, FolderGit2, Globe, Send } from 'lucide-react';
 
+import { personalInfo } from '../data/portfolioData';
+
 export default function Contact() {
   const contactInfo = [
     {
       icon: <Mail className="text-[#c5ff41]" />,
       label: "Email",
-      value: "nishantpatil10121@gmail.com",
-      link: "mailto:nishantpatil10121@gmail.com"
+      value: personalInfo.email,
+      link: `mailto:${personalInfo.email}`
     },
     {
       icon: <Phone className="text-[#c5ff41]" />,
       label: "Phone",
-      value: "+91 9511692910",
-      link: "tel:+919511692910"
+      value: personalInfo.phone,
+      link: `tel:${personalInfo.phone.replace(/\s+/g, '')}`
     },
     {
       icon: <FolderGit2 className="text-[#c5ff41]" />,
       label: "GitHub",
-      value: "github.com/Nishant0121",
-      link: "https://github.com/Nishant0121"
+      value: personalInfo.githubLabel,
+      link: personalInfo.github
     },
     {
       icon: <Globe className="text-[#c5ff41]" />,
       label: "Website",
-      value: "nishantpatil.vercel.app",
-      link: "https://nishantpatil.vercel.app"
+      value: personalInfo.websiteLabel,
+      link: personalInfo.website
     }
   ];
 
